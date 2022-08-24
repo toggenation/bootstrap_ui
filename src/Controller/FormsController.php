@@ -20,7 +20,12 @@ class FormsController extends AppController
     {
         parent::initialize();
 
-        $this->formNames = ['line_1', 'line_2', 'line_3', 'line_4'];
+        $this->formNames = ['line_1', 'line_2', 'line_3'];
+    }
+
+    public function testRedirect()
+    {
+        return $this->redirect(['action' => 'print']);
     }
     public function clear($name = null)
     {

@@ -13,7 +13,7 @@ $this->extend('../layout/TwitterBootstrap/dashboard');
 <?php $this->start('tb_sidebar'); ?>
 <ul class="nav flex-column">
     <li class="nav-item">
-        <?= $this->Html->link("Test Action", ['action' => 'action'], [
+        <?= $this->Html->link("Test Action", ['action' => 'testRedirect'], [
             "class" => "nav-link"
         ]); ?>
     </li>
