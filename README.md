@@ -1,4 +1,4 @@
-# Multiple Modelless Forms on one Page
+# FriendsOfCake/BootstrapUI & Multiple Modelless Forms on one Page
 
 ## Features
 * Using the awesome FriendsOfCake/BootstrapUI plugin for quickly getting Bootstrap 5 running
