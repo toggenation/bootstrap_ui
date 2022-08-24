@@ -6,4 +6,4 @@
 * Using `$this->Form->postLink()` inside a Form
 * Using Forms classes schema and validation
 
-
+![Screenshot of multiple forms on a page](./screenshot.png)
