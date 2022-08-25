@@ -12,12 +12,16 @@ $this->extend('../layout/TwitterBootstrap/dashboard');
 
 <?php $this->start('tb_sidebar'); ?>
 <ul class="nav flex-column">
-    <li class="nav-item">
-        <?= $this->Html->link("Test Action", ['action' => 'testRedirect'], [
-            "class" => "nav-link"
-        ]); ?>
-    </li>
+    <li><?= $this->Html->link(__('List Users'), ['controller' => 'Users', 'action' => 'index'], ['class' => 'nav-link']) ?></li>
+    <li><?= $this->Html->link(__('List Posts'), ['controller' => 'Posts', 'action' => 'index'], ['class' => 'nav-link']) ?></li>
 </ul>
+
+<div class="row">
+    <div class="col">
+        <p class="ms-3"><?= $this->Html->activeIcon(false); ?></p>
+        <p class="ms-3"><?= $this->Html->activeIcon(true); ?></p>
+    </div>
+</div>
 <?php $this->end(); ?>
 
 <h3 class="mt-4">Production Line Print</h3>
@@ -35,9 +39,12 @@ $this->extend('../layout/TwitterBootstrap/dashboard');
                     ]); ?>
                     <?= $this->Form->control('printer', [
                         'empty' => '(please select a printer)',
-                        'required' => false
+                        'required' => false,
+                        'prepend' => $this->Html->icon('printer')
                     ]); ?>
-                    <?= $this->Form->control('copies'); ?>
+                    <?= $this->Form->control('copies', [
+                        'prepend' => '#'
+                    ]); ?>
 
                     <div class="col d-flex justify-content-between">
                         <?= $this->Form->button($this->Html->icon('printer') . ' Print', [

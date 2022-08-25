@@ -17,7 +17,8 @@ declare(strict_types=1);
 
 namespace App\View;
 
-use BootstrapUI\View\UIView;
+
+use Cake\View\View;
 
 /**
  * Application View
@@ -25,9 +26,15 @@ use BootstrapUI\View\UIView;
  * Your application's default view class
  *
  * @link https://book.cakephp.org/4/en/views.html#the-app-view
+ * @property \BootstrapUI\View\Helper\BreadcrumbsHelper $Breadcrumbs
+ * @property \BootstrapUI\View\Helper\FlashHelper $Flash
+ * @property \BootstrapUI\View\Helper\FormHelper $Form
+ * @property \App\View\Helper\HtmlHelper $Html
+ * @property \BootstrapUI\View\Helper\PaginatorHelper $Paginator
  */
-class AppView extends UIView
+class AppView extends View
 {
+    use UIViewTrait;
     /**
      * Initialization hook method.
      *
@@ -41,8 +48,10 @@ class AppView extends UIView
     {
         parent::initialize();
 
-        if ($this->getLayout() === 'BootstrapUI.default') {
-            $this->setLayout('TwitterBootstrap/default');
-        };
+        $this->initializeUI(['layout' => 'TwitterBootstrap/default']);
+
+        // if ($this->getLayout() === 'BootstrapUI.default') {
+        //     $this->setLayout('TwitterBootstrap/default');
+        // };
     }
 }
